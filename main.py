@@ -1,4 +1,6 @@
 import streamlit as st
+import plotly.express as px
+from backend import get_data
 
 
 st.title("Weather Forecast for upcoming Days".lower())
@@ -14,3 +16,7 @@ elif days == 1:
     st.subheader(f"{option} for the next day in {place.lower()}:")
 else:
     st.subheader(f"{option} for the next {days} days in {place.lower()}:")
+
+data = get_data(place, days, option)
+figure = px.line(x=)
+st.plotly_chart()
